@@ -46,10 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 break;
         }
         if(motionEvent.getY() > 1000){
-            return false;//忽略所有後續的callback
+            return false;//
         }
-        return true; //會繼續攔截後續接連的callback
-        //以上return只以第一個進入的callback return 值為主
-        //所以第二第三個的return true 或 false 不影響事件傳遞
+        return true; //
+        //true means you consumed the event and want the rest of the events in the gesture - other listeners/views will not receive the events. false means let someone else handle the event. It's actually a bit more specific than that though
     }
 }
